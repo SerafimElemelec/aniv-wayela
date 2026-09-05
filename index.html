@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5b0aa5">
+  <meta name="description" content="Convite digital de aniversário da Wayela — 2 anos.">
+  <title>Wayela faz 2 anos! 🎈</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       ABERTURA DO CONVITE
+       Mantida separada do restante da página para não interferir
+       no RSVP, contador ou restantes componentes.
+       ========================================================= -->
+  <section id="openingScreen" class="opening-screen" aria-label="Abrir convite">
+    <div class="opening-sparkles" aria-hidden="true">✦</div>
+    <div class="opening-content">
+      <p class="opening-overline">UM CONVITE ESPECIAL</p>
+      <h1>Wayela</h1>
+      <p class="opening-subtitle">está a fazer <strong>2 anos</strong> 🎈</p>
+
+      <button id="openInvitation" class="envelope-button" type="button" aria-label="Toque para abrir o convite">
+        <span class="envelope-shadow"></span>
+        <span class="envelope">
+          <span class="envelope-flap"></span>
+          <span class="envelope-pocket"></span>
+          <span class="envelope-letter">
+            <strong>Wayela</strong>
+            <small>2 anos</small>
+          </span>
+          <span class="envelope-heart">♥</span>
+        </span>
+      </button>
+
+      <p class="open-hint"><span>☝</span> Toque para abrir o convite</p>
+      <p class="open-note">Prepare-se para celebrar um dia cheio de amor, alegria e balões.</p>
+    </div>
+    <div class="opening-balloon ob1"></div>
+    <div class="opening-balloon ob2"></div>
+    <div class="opening-balloon ob3"></div>
+    <div class="opening-balloon ob4"></div>
+  </section>
+
+
+  <!-- Balões decorativos: sobem do rodapé até ao topo -->
+  <div class="balloons" aria-hidden="true">
+    <span class="balloon b1"></span><span class="balloon b2"></span>
+    <span class="balloon b3"></span><span class="balloon b4"></span>
+    <span class="balloon b5"></span><span class="balloon b6"></span>
+    <span class="balloon b7"></span><span class="balloon b8"></span>
+  </div>
+
+  <main id="mainContent" class="invitation-main">
+    <section class="hero" id="inicio">
+      <div class="sparkles" aria-hidden="true">✦　✧　✦</div>
+      <p class="eyebrow">UM DIA MUITO ESPECIAL</p>
+      <h1>Aniversário da</h1>
+      <div class="name">Wayela</div>
+      <p class="lead">Nossa pequena princesa está a completar <strong>2 anos</strong>!<br>
+        E queremos viver este momento ao lado de pessoas especiais.</p>
+
+      <div class="portrait-wrap">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="photo-glow"></div>
+        <img class="portrait" src="assets/wayela.png" alt="Wayela, a aniversariante">
+        <div class="cake" aria-hidden="true">
+          <div class="cake-top"></div>
+          <div class="cake-body"></div>
+          <div class="cake-drip"></div>
+          <div class="candle c1"><i></i></div>
+          <div class="candle c2"><i></i></div>
+          <div class="candle c3"><i></i></div>
+        </div>
+      </div>
+
+      <div class="event-date">
+        <div><span>26</span><small>SETEMBRO</small></div>
+        <i></i>
+        <div><span>14H</span><small>INÍCIO</small></div>
+      </div>
+
+      <div class="countdown-card">
+        <p class="countdown-title">Contagem regressiva</p>
+        <div id="contadorTempo" class="countdown"></div>
+        <p id="contadorMensagem" class="countdown-message"></p>
+      </div>
+
+      <a class="scroll-cue" href="#convite" aria-label="Continuar para os detalhes">↓</a>
+    </section>
+
+    <section class="invitation section" id="convite">
+      <div class="section-kicker">COM MUITO CARINHO</div>
+      <h2>Venha celebrar comigo</h2>
+      <p class="section-text">
+        Dois anos de sorrisos, descobertas, abraços e momentos que tornaram a nossa vida ainda mais bonita.
+        A sua presença será um presente inesquecível para a Wayela.
+      </p>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="detail-icon">📅</div>
+          <h3>Quando?</h3>
+          <p><strong>26 de Setembro de 2026</strong><br>às 14 horas</p>
+        </article>
+        <article class="detail-card">
+          <div class="detail-icon">📍</div>
+          <h3>Onde?</h3>
+          <p><strong>Cantífilas</strong><br>Rua da Sinha-Moça</p>
+        </article>
+        <article class="detail-card">
+          <div class="detail-icon">🎈</div>
+          <h3>Dress code</h3>
+          <p>Rapazes — branco e azul<br>Meninas — rosa e branco</p>
+        </article>
+      </div>
+
+      <div class="address-pill">
+        <span>📍</span> Cantífilas · Rua da Sinha-Moça
+        <button id="copyAddress" type="button">Copiar</button>
+      </div>
+    </section>
+
+    <section class="rsvp section" id="rsvp">
+      <div class="rsvp-card">
+        <div class="cake-mini" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="section-kicker">CONFIRME A SUA PRESENÇA</div>
+        <h2>Vamos festejar?</h2>
+        <p class="section-text">Preencha os dados abaixo. A confirmação será enviada diretamente pelo WhatsApp.</p>
+
+        <form id="rsvpForm" novalidate>
+          <div class="field">
+            <label for="nome">Seu nome</label>
+            <input id="nome" type="text" autocomplete="name" placeholder="Digite seu nome">
+          </div>
+
+          <div class="field">
+            <label for="telefone">Seu telefone</label>
+            <input id="telefone" type="tel" inputmode="tel" maxlength="16" autocomplete="tel"
+              placeholder="Ex.: 923 456 789">
+            <small id="erroTelefone" class="error"></small>
+          </div>
+
+          <div class="field two">
+            <div>
+              <label for="acompanhantes">Acompanhantes</label>
+              <input id="acompanhantes" type="number" min="0" max="20" value="0" placeholder="0">
+            </div>
+            <div>
+              <label for="origem">Vindo de/do</label>
+              <input id="origem" type="text" placeholder="Ex.: Cuito, Rua Silva Porto">
+            </div>
+          </div>
+
+          <div class="choice-row">
+            <button type="submit" class="btn btn-primary">🎉 Confirmar presença</button>
+            <button type="button" id="btnDecline" class="btn btn-secondary">Não poderei comparecer</button>
+          </div>
+        </form>
+
+        <p class="privacy-note">🔒 Os dados preenchidos servem apenas para enviar a confirmação pelo WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="confetti-line" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
+      <h2>Esperamos por si!</h2>
+      <p>Vamos criar memórias lindas para guardar para sempre. 💜🧡</p>
+      <div class="action-row">
+        <button class="outline-btn" id="shareBtn">↗ Partilhar convite</button>
+        <button class="outline-btn" id="calendarBtn">＋ Adicionar ao calendário</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="brand">
+      <span class="elo">Elo</span><span class="tec">Tec</span>
+    </span>
+    <p>Feito com <span>♥</span> para celebrar o aniversário de Wayela</p>
+  </footer>
+
+
+  <!-- Música é opcional: coloque assets/musica.mp3 para ativá-la. -->
+  <audio id="bgMusic" preload="none" loop>
+    <source src="assets/ThankYouJesus.m4a" type="audio/mpeg">
+  </audio>
+  <button id="musicToggle" class="music-toggle is-hidden" type="button" aria-label="Ativar música" aria-pressed="false">
+    ♫ <span>Música</span>
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
