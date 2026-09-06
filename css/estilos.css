@@ -108,7 +108,7 @@ footer span{color:var(--orange)}
 .toast{position:fixed;z-index:100;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#32123f;color:#fff;padding:13px 18px;border-radius:999px;box-shadow:0 15px 35px rgba(0,0,0,.2);font-size:.78rem;font-weight:700;transition:.3s;max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .balloons{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;contain:layout paint}
-.balloon{position:absolute;bottom:-150px;width:42px;height:55px;border-radius:50% 50% 46% 46%;opacity:.26;animation:float 16s linear infinite}
+.balloon{position:absolute;bottom:-150px;width:42px;height:55px;border-radius:50% 50% 46% 46%;opacity:.26;animation:float 16s linear infinite;will-change:transform,opacity;transform:translate3d(0,0,0)}
 .balloon:before{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid currentColor}
 .balloon:after{content:"";position:absolute;left:50%;top:53px;width:1px;height:110px;background:currentColor;opacity:.45;transform:rotate(4deg);transform-origin:top}
 .b1{left:4%;color:var(--purple);background:var(--purple);animation-delay:0s}.b2{left:17%;color:var(--orange);background:var(--orange);animation-delay:4s}.b3{left:31%;color:var(--purple);background:var(--purple);animation-delay:9s}.b4{left:48%;color:var(--orange);background:var(--orange);animation-delay:2s}.b5{left:64%;color:var(--purple);background:var(--purple);animation-delay:7s}.b6{left:78%;color:var(--orange);background:var(--orange);animation-delay:11s}.b7{left:89%;color:var(--purple);background:var(--purple);animation-delay:5s}.b8{left:56%;color:var(--pink);background:var(--pink);animation-delay:14s}
@@ -135,7 +135,7 @@ footer span{color:var(--orange)}
   /* Os balões continuam visíveis em iOS/Android com "Reduzir movimento".
      Apenas a animação é desativada; o elemento não fica no estado opacity:0
      definido pelo primeiro frame das keyframes. */
-  .balloons .balloon{animation:none!important;bottom:14vh!important;opacity:.22!important;transform:translateY(0)!important}
+  .balloons .balloon{animation:float 16s linear infinite!important;will-change:transform,opacity;bottom:-150px!important;opacity:.26!important}
   .opening-balloon{animation:none!important;bottom:12vh!important;opacity:.38!important;transform:translateY(0)!important}
 }
 
@@ -344,7 +344,6 @@ body.invitation-opened .opening-screen{
 .music-toggle:hover{transform:translateY(-2px)}
 .music-toggle.is-hidden{display:none}
 .music-toggle.playing{background:var(--purple);color:#fff}
-
 
 
 /* ---------------- Animação do rodapé (EloTec) ---------------- */
