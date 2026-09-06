@@ -79,9 +79,9 @@ musicToggle?.addEventListener("click", alternarMusica);
 prepararMusica();
 
 /* ============================================================
-   Número de telefone do responsável da aniversariante,
-   onde as mensagem dos convidados caem.
-   
+   WAYELA RSVP — CONFIGURAÇÃO
+   Número do responsável onde cairá as mensagens do whatsApp.
+   Formato: 244 + número, sem espaços, + ou parênteses.
    ============================================================ */
 const WHATSAPP_RESPONSAVEL = "244941532477";
 
@@ -212,20 +212,27 @@ function enviarRSVP(vaiComparecer){
   const origem = $("origem").value.trim();
   const acompanhantes = Math.max(0, Number($("acompanhantes").value) || 0);
 
-  let mensagem = `Olá! Sou ${nome}.%0A%0A`;
-  mensagem += `📱 Telefone: ${telefone}%0A`;
-  mensagem += `📍 Vindo de/do: ${origem}%0A`;
+  // Montamos a mensagem com quebras de linha reais e só depois
+  // fazemos a codificação UTF-8 da mensagem inteira. Isso evita
+  // que emojis (📱 📍 🎉 👥 💜) sejam interpretados como "�".
+  let mensagem = `Olá! Sou ${nome}.\n\n`;
+  mensagem += `📱 Telefone: ${telefone}\n`;
+  mensagem += `📍 Vindo de/do: ${origem}\n`;
 
   if(vaiComparecer){
-    mensagem += `🎉 Confirmo a minha presença no aniversário da Wayela.%0A`;
+    mensagem += `🎉 Confirmo a minha presença no aniversário da Wayela.\n`;
     mensagem += `👥 Acompanhantes: ${acompanhantes}.`;
   }else{
     mensagem += `💜 Infelizmente não poderei comparecer ao aniversário da Wayela.`;
   }
 
+  // encodeURIComponent converte corretamente os caracteres Unicode
+  // para percent-encoding UTF-8, incluindo emojis e acentos.
+  const mensagemCodificada = encodeURIComponent(mensagem);
+
   mostrarToast("Abrindo WhatsApp…");
   setTimeout(() => {
-    const url = `https://wa.me/${WHATSAPP_RESPONSAVEL}?text=${mensagem}`;
+    const url = `https://wa.me/${WHATSAPP_RESPONSAVEL}?text=${mensagemCodificada}`;
     window.open(url,"_blank","noopener,noreferrer");
   },350);
 }
