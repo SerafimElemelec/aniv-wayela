@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,9 +10,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Pacifico&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
   <div class="page-noise" aria-hidden="true"></div>
 
@@ -27,8 +31,7 @@
       <h1>Wayela</h1>
       <p class="opening-subtitle">está a fazer <strong>2 anos</strong> 🎈</p>
 
-      <button id="openInvitation" class="envelope-button" type="button"
-              aria-label="Toque para abrir o convite">
+      <button id="openInvitation" class="envelope-button" type="button" aria-label="Toque para abrir o convite">
         <span class="envelope-shadow"></span>
         <span class="envelope">
           <span class="envelope-flap"></span>
@@ -57,6 +60,14 @@
     <span class="balloon b3"></span><span class="balloon b4"></span>
     <span class="balloon b5"></span><span class="balloon b6"></span>
     <span class="balloon b7"></span><span class="balloon b8"></span>
+
+    <!-- Velas flutuantes: camada decorativa independente dos balões. -->
+    <span class="floating-candle fc1"><i></i></span>
+    <span class="floating-candle fc2"><i></i></span>
+    <span class="floating-candle fc3"><i></i></span>
+    <span class="floating-candle fc4"><i></i></span>
+    <span class="floating-candle fc5"><i></i></span>
+    <span class="floating-candle fc6"><i></i></span>
   </div>
 
   <main id="mainContent" class="invitation-main">
@@ -115,7 +126,7 @@
         <article class="detail-card">
           <div class="detail-icon">📍</div>
           <h3>Onde?</h3>
-          <p><strong>Cantífilas</strong><br>Rua da Cinha-Moça; Entre a igreja IESA e Sétimo dia</p>
+          <p><strong>Cantífilas</strong><br>Rua da Sinha-Moça</p>
         </article>
         <article class="detail-card">
           <div class="detail-icon">🎈</div>
@@ -125,7 +136,7 @@
       </div>
 
       <div class="address-pill">
-        <span>📍</span> Cantífilas · Rua da Sinha-Moça
+        <span>📍</span> Bairro Cantífilas · Rua da Cinha-Moça · Entre a Igreja IESA e SÉTIMO DIA
         <button id="copyAddress" type="button">Copiar</button>
       </div>
     </section>
@@ -141,13 +152,14 @@
 
         <form id="rsvpForm" novalidate>
           <div class="field">
-            <label for="nome">Seu nome</label>
+            <label for="nome">Nome do(a) encarregado(a)</label>
             <input id="nome" type="text" autocomplete="name" placeholder="Digite seu nome">
           </div>
 
           <div class="field">
-            <label for="telefone">Seu telefone</label>
-            <input id="telefone" type="tel" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="Ex.: 923 456 789">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" type="tel" inputmode="tel" maxlength="16" autocomplete="tel"
+              placeholder="Ex.: 923 456 789">
             <small id="erroTelefone" class="error"></small>
           </div>
 
@@ -158,7 +170,7 @@
             </div>
             <div>
               <label for="origem">Vindo de/do</label>
-              <input id="origem" type="text" placeholder="Ex.: Cuito, Bié">
+              <input id="origem" type="text" placeholder="Ex.: Cuito, Rua Silva Porto">
             </div>
           </div>
 
@@ -184,11 +196,12 @@
   </main>
 
   <footer>
-     <span class="brand">
-        <span class="elo">Elo</span><span class="tec">Tec</span>
+    © 2026 -
+    <span class="brand">
+      <span class="elo">Elo</span><span class="tec">Tec</span>
     </span>
 
-    <p>Feito com <span>♥</span> para celebrar o aniversário da <strong>Wayela</strong> </p>
+    <p>Feito com <span>♥</span> para celebrar o aniversário da <span>Wayela</span></p>
   </footer>
 
 
@@ -196,12 +209,12 @@
   <audio id="bgMusic" preload="none" loop>
     <source src="assets/musica.mp3" type="audio/mpeg">
   </audio>
-  <button id="musicToggle" class="music-toggle is-hidden" type="button"
-          aria-label="Ativar música" aria-pressed="false">
+  <button id="musicToggle" class="music-toggle is-hidden" type="button" aria-label="Ativar música" aria-pressed="false">
     ♫ <span>Música</span>
   </button>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="js/script.js"></script>
 </body>
+
 </html>

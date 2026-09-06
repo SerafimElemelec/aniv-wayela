@@ -112,6 +112,15 @@ footer span{color:var(--orange)}
 .balloon:before{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid currentColor}
 .balloon:after{content:"";position:absolute;left:50%;top:53px;width:1px;height:110px;background:currentColor;opacity:.45;transform:rotate(4deg);transform-origin:top}
 .b1{left:4%;color:var(--purple);background:var(--purple);animation-duration:17s;animation-delay:-2s}.b2{left:17%;color:var(--orange);background:var(--orange);animation-duration:21s;animation-delay:-4s}.b3{left:31%;color:var(--purple);background:var(--purple);animation-duration:19s;animation-delay:-6s}.b4{left:48%;color:var(--orange);background:var(--orange);animation-duration:23s;animation-delay:-3s}.b5{left:64%;color:var(--purple);background:var(--purple);animation-duration:16s;animation-delay:-5s}.b6{left:78%;color:var(--orange);background:var(--orange);animation-duration:20s;animation-delay:-7s}.b7{left:89%;color:var(--purple);background:var(--purple);animation-duration:18s;animation-delay:-4s}.b8{left:56%;color:var(--pink);background:var(--pink);animation-duration:22s;animation-delay:-6s}
+
+/* Velas flutuantes — adicionadas sem alterar a implementação dos balões. */
+.floating-candle{position:absolute;bottom:-120px;width:11px;height:36px;border-radius:6px;background:repeating-linear-gradient(-25deg,#fff 0 6px,var(--purple) 6px 12px);opacity:.86;animation:candleFloat 19s linear infinite;will-change:transform,opacity;transform:translate3d(0,0,0);filter:drop-shadow(0 4px 7px rgba(91,10,165,.12))}
+.floating-candle i{position:absolute;width:10px;height:13px;left:.5px;top:-15px;border-radius:50% 50% 50% 0;background:var(--orange);transform:rotate(-45deg);box-shadow:0 0 13px #ffb44d;animation:floatingFlame .65s ease-in-out infinite alternate}
+.floating-candle:after{content:"";position:absolute;left:50%;top:-1px;width:1px;height:9px;background:rgba(70,35,20,.45);transform:translateX(-50%)}
+.fc1{left:9%;animation-duration:18s;animation-delay:-1s}.fc2{left:24%;background:repeating-linear-gradient(-25deg,#fff 0 6px,var(--orange) 6px 12px);animation-duration:21s;animation-delay:-5s}.fc3{left:40%;animation-duration:20s;animation-delay:-9s}.fc4{left:58%;background:repeating-linear-gradient(-25deg,#fff 0 6px,var(--orange) 6px 12px);animation-duration:23s;animation-delay:-3s}.fc5{left:74%;animation-duration:19s;animation-delay:-12s}.fc6{left:90%;background:repeating-linear-gradient(-25deg,#fff 0 6px,var(--orange) 6px 12px);animation-duration:22s;animation-delay:-7s}
+@keyframes candleFloat{0%{transform:translate3d(0,0,0) rotate(-4deg);opacity:0}10%{opacity:.86}35%{transform:translate3d(20px,-38vh,0) rotate(5deg)}65%{transform:translate3d(-18px,-76vh,0) rotate(-5deg)}90%{opacity:.72}100%{transform:translate3d(12px,-125vh,0) rotate(4deg);opacity:0}}
+@keyframes floatingFlame{to{transform:rotate(-45deg) scale(.78) translate(-1px,1px);filter:brightness(1.18)}}
+
 @keyframes float{0%{transform:translateY(0) translateX(0) rotate(-5deg);opacity:0}10%{opacity:.28}50%{transform:translateY(-65vh) translateX(25px) rotate(7deg)}90%{opacity:.2}100%{transform:translateY(-120vh) translateX(-25px) rotate(-5deg);opacity:0}}
 .cake-mini{margin:0 auto 16px;width:55px;height:36px;border-radius:6px 6px 13px 13px;background:#fff0d2;border-top:13px solid var(--orange);position:relative}
 .cake-mini:after{content:"";position:absolute;left:12px;top:-24px;width:6px;height:15px;background:repeating-linear-gradient(0deg,#fff 0 4px,var(--purple) 4px 8px);box-shadow:12px 0 var(--purple),24px 0 var(--purple)}
@@ -371,4 +380,62 @@ body.invitation-opened .opening-screen{
   .balloons .b6 { animation-delay: 11.25s !important; }
   .balloons .b7 { animation-delay: 13.5s !important; }
   .balloons .b8 { animation-delay: 15.75s !important; }
+
+  /* As velas também entram uma a uma no mobile. A regra é específica
+     para elas e não altera os delays já validados dos balões. */
+  .balloons .floating-candle {
+    animation-name: candleFloat !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    animation-fill-mode: both !important;
+    animation-play-state: running !important;
+    will-change: transform, opacity;
+  }
+  .balloons .fc1 { animation-delay: 0s !important; }
+  .balloons .fc2 { animation-delay: 3s !important; }
+  .balloons .fc3 { animation-delay: 6s !important; }
+  .balloons .fc4 { animation-delay: 9s !important; }
+  .balloons .fc5 { animation-delay: 12s !important; }
+  .balloons .fc6 { animation-delay: 15s !important; }
 }
+
+.brand {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 18px;
+
+    /* gradiente */
+    background: linear-gradient(
+        270deg,
+        #d89709,
+        #3b82f6,
+        #ec12e1,
+        #ad2d0d
+    );
+
+    background-size: 600% 600%;
+
+    /* gradiente no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s ease infinite;
+}
+
+/* animação */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
